@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu JS</title>
+</head>
+<body>
+<h1>Intensivão JS</h1>
+
+<script>
+
+//EXERCÍCIO 1
+
+//1
+var produto = "borracha";
+
+//2
+var preco = "R$50,00";
+
+//3
+console.log("O produto " + produto + " custa " + preco);
+
+//4
+preco = "R$35,00";
+console.log("O produto " + produto + " agora custa " + preco);
+
+//5
+alert("O produto " + produto + " agora custa " + preco);
+
+
+
+//EXERCÍCIO 2
+
+//1
+var a = 1;
+var b = 2;
+
+var soma = a+b;
+
+document.write("A soma é: " + soma + "<br><br>");
+
+//2
+var idade = 18;
+
+var menor = idade<18;
+
+    if (idade < 18)
+    {
+        document.write("Você é menor de idade" + "<br><br>")
+    }
+    else
+    {
+        document.write("Você é maior de idade" + "<br><br>")
+    }
+
+//3
+    var carteira = true;
+
+    var podeDirigir = idade>=18 && carteira==true;
+
+    if (podeDirigir == true){
+        document.write("Pode dirigir? Sim"+ "<br><br>")
+    }
+    if (podeDirigir == false){
+        document.write("Pode dirigir? Não" + "<br><br>")
+    }
+
+
+ 
+//EXERCÍCIO 3
+
+//1
+var idade = 16;
+
+if (idade>=16)
+{
+    document.write("Você pode votar"+ "<br><br>")
+}
+else 
+{
+    document.write("Você não pode votar"+ "<br><br>")
+}
+
+
+//2
+var dia = 3;
+
+switch (dia) {
+    case 1:
+        document.write("Domingo"+ "<br><br>");
+        break;
+    case 2:
+        document.write("Segunda-feira"+ "<br><br>");
+        break;
+    case 3:
+        document.write("Terça-feira"+ "<br><br>");
+        break;
+
+    case 4:
+        document.write("Quarta-feira"+ "<br><br>");
+        break;
+
+    case 5:
+        document.write("Quinta-feira"+ "<br><br>");
+        break;
+    case 6:
+        document.write("Sexta-feira"+ "<br><br>");
+        break;
+    case 7:
+        document.write("Sábado"+ "<br><br>");
+        break;
+}
+
+
+//EXERCÍCIO 4
+
+//1
+    for (var i = 1; i <= 10; i++)
+    {
+        document.write(i + "<br>");
+    }
+
+//2
+    var numero = 1;
+    var soma = 0;
+
+    while (numero <= 5)
+    {
+        soma = soma + numero;
+        numero++;
+    }
+
+    document.write("<br>" + "A soma é: " + soma);
+
+//3
+var senha;
+
+    do
+    {
+        senha = prompt("Digite a senha:");
+
+    } while (senha != "1234");
+
+document.write("<br><br>" + "Senha correta!" + "<br><br>");
+
+
+//EXERCÍCIO 5
+
+//1
+function multiplicacao(a=1, b=5){
+    return (a*b);
+}
+
+document.write(multiplicacao());
+
+//2
+var nome = "Luara";
+
+function saudacao (nome)
+{
+    return("<br><br>" + "Olá " + nome);
+}
+
+document.write(saudacao(nome));
+
+</script>
+    
+</body>
+</html>
