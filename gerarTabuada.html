@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerando tabuadas</title>
+</head>
+<body>
+    <label for="inicio">Coloque o número de início</label>
+    <input type="text" id="inicio"><br>
+
+    <label for="inicio">Coloque o número final</label>
+    <input type="text" id="fim"><br>
+
+    <button onclick="gerarTabuadas()">Gerar</button>
+    <div id="resultado"></div>
+    
+<script>
+    function gerarTabuadas(){
+        const inicio = parseInt(document.getElementById("inicio").value);
+        const fim = parseInt(document.getElementById("fim").value);
+        const resultado = document.getElementById("resultado");
+        resultado.innerHTML = "";
+    
+
+    if(isNaN(inicio) || isNaN(fim)){
+        alert("Digite valores númericos válidos");
+        return;
+    }
+    if (inicio > fim){
+        alert("O valor inicial deve ser menor ou igual ao valor final.");
+        return;
+    }
+
+    for (let i = inicio; i <= fim; i++) {
+        let bloco = `<h3> Tabuada do ${i}</h3>`;
+        for (let j = 1; j <= 10; j++){
+            bloco += `${i} x ${j} = ${i * j} <br>`;
+        }
+        bloco += "<hr>";
+        resultado.innerHTML += bloco;
+    }
+    }
+</script>
+
+
+</body>
+</html>
