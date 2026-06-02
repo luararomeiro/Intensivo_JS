@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .botao {
+        background-color: blue;
+        color: white;
+    }
+</style>
+<body>
+
+    <button id="meuBotao" class="botao">Clique aqui</button>
+
+    <script>
+
+//1. Altere o texto de um elemento h1 via JavaScript. 
+document.getElementById("nome").textContent = "Novo nome";
+
+//2. Mude a cor de fundo de um parágrafo ao carregar a página. 
+
+let corParagrafo = document.querySelector("p");
+corParagrafo.style.color = "pink";
+
+//3. Adicione uma classe CSS a um botão existente. 
+
+ const botao = document.getElementById('meuBotao');
+
+    </script>
+</body>
+</html>

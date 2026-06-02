@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//1. Crie uma função chamada executarDuasVezes que recebe uma função como argumento e a executa duas vezes.
+
+function executarDuasVezes(funcao) {
+  funcao();
+  funcao();
+}
+
+executarDuasVezes(() => console.log("Executando..."));
+
+
+//2. Construa uma função chamada criarSaudacao(saudacao) que retorna outra função que recebe o nome da pessoa.
+
+function criarSaudacao(saudacao) {
+  return function(nome) {
+    console.log(saudacao + ", " + nome + "!");
+  };
+}
+
+const bomDia = criarSaudacao("Bom dia");
+bomDia("Luara");
+
+
+//3. Escreva uma função calcular que recebe dois números e uma função de operação (como soma, subtração etc.).
+
+function calcular(a, b, operacao) {
+  return operacao(a, b);
+}
+
+function soma(x, y) {
+  return x + y;
+}
+
+function subtracao(x, y) {
+  return x - y;
+}
+
+console.log(calcular(10, 5, soma)); // 15
+console.log(calcular(10, 5, subtracao)); // 5
+
+
+//4. (Desafio) Implemente uma função compose(f, g) que retorna uma nova função onde f(g(x)) é executado.
+
+function compose(f, g) {
+  return function(x) {
+    return f(g(x));
+  };
+}
+
+function dobrar(x) {
+  return x * 2;
+}
+
+function somarTres(x) {
+  return x + 3;
+}
+
+const resultado = compose(dobrar, somarTres);
+
+console.log(resultado(5)); // 16
+
+    </script>
+</body>
+</html>

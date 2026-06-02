@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios DOM</title>
+</head>
+<body>
+
+    <p id="mudar-texto">AAAAAAAAAAAAAAAAAA</p>
+    <button id="botao">Mudar texto</button>
+
+    <br><br><br>
+
+    <input type="text">
+    <p id="copiarTexto"></p><br><br><br>
+
+    <img
+        style="width: 50%; height: auto;"
+        src="https://getwallpapers.com/wallpaper/full/9/2/3/1049914-winx-club-wallpapers-1920x1200-for-mobile-hd.jpg"
+        alt="Imagem de exemplo"
+        id="imagem"
+    >
+
+    <script>
+
+// 1. Faça um botão que, ao ser clicado, mude o texto de um parágrafo.
+    document.querySelector("#botao").addEventListener("click", function () {
+    document.getElementById("mudar-texto").textContent = "BBBBBBBBBBBBB";
+    });
+
+// 2. Capture o texto digitado em um input e mostre em tempo real abaixo dele.
+    document.querySelector("input").addEventListener("input", function (evento) {
+    document.getElementById("copiarTexto").textContent = evento.target.value;
+    });
+
+// 3. Ao passar o mouse sobre uma imagem, troque sua borda.
+    let imagem = document.getElementById("imagem");
+    imagem.addEventListener("mouseover", function () {
+    imagem.style.border = "5px solid red";
+});
+
+    imagem.addEventListener("mouseout", function () {
+    imagem.style.border = "none";
+    });
+
+    </script>
+
+</body>
+</html>

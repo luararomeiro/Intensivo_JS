@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//1. Crie uma função `saudacao` que retorna outra função com um nome como argumento e imprime: "Olá, [nome]!".
+
+
+function saudacao() {
+  return function(nome) {
+    console.log("Olá, " + nome + "!");
+  };
+}
+
+const cumprimentar = saudacao();
+cumprimentar("Luara");
+
+
+//2. Construa uma função chamada `multiplicador(x)` que retorna outra função. Esta deve multiplicar o valor recebido por `x`.
+    
+function multiplicador(x) {
+  return function(valor) {
+    return valor * x;
+  };
+}
+
+const dobrar = multiplicador(2);
+console.log(dobrar(5)); // 10
+
+
+//3. Explique com suas palavras o que é um closure e por que ele é útil.
+//Resposta: Closure é quando uma função consegue lembrar e acessar variáveis do local onde ela foi criada, mesmo depois que esse local já foi executado. Ele é útil porque permite guardar informações e reutilizá-las sem precisar criar variáveis globais, deixando o código mais organizado e seguro.
+
+
+//4. Qual será o resultado do código abaixo?
+function criarContador() {
+ let i = 0;
+ return function() {
+ return ++i;
+ }
+}
+let c1 = criarContador();
+let c2 = criarContador();
+console.log(c1()); // ?
+console.log(c1()); // ?
+console.log(c2()); // ?
+
+// O resultado será 1,2,1
+
+    </script>
+</body>
+</html>

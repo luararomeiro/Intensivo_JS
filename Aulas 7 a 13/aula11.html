@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+//1. Explique a diferença entre escopo de função e de bloco.
+//Respota: Escopo de função é quando uma variável só pode ser usada dentro da função onde foi criada. Já o escopo de bloco é quando ela só pode ser usada dentro do bloco (if, for, etc.) em que foi declarada.
+
+//2. Analise o código a seguir e diga o que será impresso:
+var x = 1;
+function teste() {
+ console.log(x);
+ var x = 2;
+ console.log(x);
+}
+teste();
+//Resposta: Primeiro aparece undefined e depois 2, porque a variável x criada dentro da função acaba sendo considerada antes da linha onde recebe o valor 2. Por isso, no primeiro console.log ela ainda não tem valor, e no segundo já vale 2.
+
+//3. Reescreva o seguinte código com let para evitar problemas de hoisting:
+function exemplo() {
+ if (true) {
+ var nome = "Ana";
+ }
+ console.log(nome);
+}
+
+//Resposta: 
+
+function exemplo() {
+  if (true) {
+    let nome = "Ana";
+    console.log(nome);
+  }
+}
+
+//4. Desafio: explique por que o código abaixo imprime 3, 3, 3 e como corrigir:
+for (var i = 0; i < 3; i++) {
+ setTimeout(() => console.log(i), 100);
+}
+
+//Resposta: Ele exprime 3,3,3 porque o tipo da variável é 'var', para resolver, é preciso trocar 'var' por 'let', porque let vai criar uma nova variável a cada repetição.
+
+</script>
+</body>
+</html>

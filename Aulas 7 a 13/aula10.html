@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        .calculadora{
+            width: 220px;
+            margin: 50px auto;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        .visor{
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .buttons{
+            display: flex;
+            gap: 10px;
+        }
+
+        .numerical,
+        .operation{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .numbers,
+        .operators{
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn{
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="calculadora" class="calculadora">
+
+        <input type="text" class="visor" id="visor" readonly>
+
+        <div class="buttons">
+
+            <div class="numerical">
+
+                <div class="numbers">
+                    <button type="button" class="btn" data-value="1">1</button>
+                    <button type="button" class="btn" data-value="2">2</button>
+                    <button type="button" class="btn" data-value="3">3</button>
+                </div>
+
+                <div class="numbers">
+                    <button type="button" class="btn" data-value="4">4</button>
+                    <button type="button" class="btn" data-value="5">5</button>
+                    <button type="button" class="btn" data-value="6">6</button>
+                </div>
+
+                <div class="numbers">
+                    <button type="button" class="btn" data-value="7">7</button>
+                    <button type="button" class="btn" data-value="8">8</button>
+                    <button type="button" class="btn" data-value="9">9</button>
+                </div>
+
+            </div>
+
+            <div class="operation">
+
+                <div class="operators">
+                    <button type="button" class="btn" data-value="0">0</button>
+                    <button type="button" class="btn operator" data-value="+">+</button>
+                    <button type="button" class="btn operator" data-value="-">-</button>
+                </div>
+
+                <div class="operators">
+                    <button type="button" class="btn operator" data-value="/">/</button>
+                    <button type="button" class="btn operator" data-value="*">*</button>
+                    <button type="button" class="btn operator" data-value="x">x</button>
+                </div>
+
+                <div class="operators">
+                    <button type="submit" class="btn operator">=</button>
+                    <button type="reset" class="btn clear">Clear</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <script>
+
+        var visor = document.getElementById("visor");
+        var botoes = document.getElementsByClassName("btn");
+
+        for(var i = 0; i < botoes.length; i++){
+
+            botoes[i].addEventListener("click", function(){
+
+                var valor = this.getAttribute("data-value");
+
+                if(valor != null){
+
+                    if(valor == "x"){
+                        valor = "*";
+                    }
+
+                    visor.value = visor.value + valor;
+                }
+
+            });
+
+        }
+        document.getElementById("calculadora").addEventListener("submit", function(event){
+
+            event.preventDefault();
+
+            if(visor.value == ""){
+                alert("Digite uma operação!");
+            }
+            else{
+                visor.value = eval(visor.value);
+            }
+
+        });
+
+        document.querySelector(".clear").addEventListener("click", function(){
+            visor.value = "";
+        });
+
+    </script>
+
+</body>
+</html>
