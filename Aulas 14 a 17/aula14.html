@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//Exercício 1: Dado um array de números, use `map` para criar um novo array com o quadrado de cada número
+
+const numeros = [1, 2, 3, 4];
+
+const quadrados = numeros.map(n => n * n);
+
+console.log(quadrados);
+// [1, 4, 9, 16]
+
+//Exercício 2: Use `filter` para extrair os nomes com mais de 5 letras do array: const nomes = ['João', 'Fernanda', 'Carlos', 'Eva']; 
+
+const nomes = ['João', 'Fernanda', 'Carlos', 'Eva'];
+
+const resultado = nomes.filter(nome => nome.length > 5);
+
+console.log(resultado);
+// ['Fernanda', 'Carlos']
+
+
+//Exercício 3: Some todos os elementos de um array de preços com `reduce`: const precos = [10.5, 22.3, 18.4]; 
+
+const precos = [10.5, 22.3, 18.4];
+
+const soma = precos.reduce((acumulador, atual) => acumulador + atual, 0);
+
+console.log(soma);
+// 51.2
+
+//Exercício 4: (Desafio) Dado um array de produtos com nome e preço, use `reduce` para calcular o valor total da compra: const carrinho = [ { nome: 'Camiseta', preco: 29.99 }, { nome: 'Calça', preco: 89.9 }, { nome: 'Meias', preco: 9.99 } ]; 
+
+
+const carrinho = [
+  { nome: 'Camiseta', preco: 29.99 },
+  { nome: 'Calça', preco: 89.9 },
+  { nome: 'Meias', preco: 9.99 }
+];
+
+const total = carrinho.reduce((acumulador, produto) => {
+  return acumulador + produto.preco;
+}, 0);
+
+console.log(total);
+// 129.88
+
+    </script>
+</body>
+</html>

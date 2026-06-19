@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+//Exercício 1: Use `setTimeout` para exibir "Olá, mundo!" após 1,5 segundos. 
+
+setTimeout(() => {
+  console.log("Olá, mundo!");
+}, 1500);
+
+//Exercício 2: Crie um contador que exibe um número a cada segundo até 10 e depois para. 
+
+let contador = 0;
+
+const intervalos = setInterval(() => {
+  contador++;
+  console.log(contador);
+
+  if (contador === 10) {
+    clearInterval(intervalo);
+  }
+}, 1000);
+
+//Exercício 3: Faça uma função que, ao ser chamada, inicie um `setInterval` e outra que pare esse intervalo. 
+
+
+let intervalo;
+
+function iniciar() {
+  intervalo = setInterval(() => {
+    console.log("Executando...");
+  }, 1000);
+}
+
+function parar() {
+  clearInterval(intervalo);
+  console.log("Parado!");
+}
+
+// Exemplo de uso:
+// iniciar();
+// parar();
+
+//Exercício 4: (Desafio) Implemente um cronômetro com `setInterval`, mostrando minutos e segundos. 
+
+let segundos = 0;
+let minutos = 0;
+
+const cronometro = setInterval(() => {
+  segundos++;
+
+  if (segundos === 60) {
+    segundos = 0;
+    minutos++;
+  }
+
+  console.log(
+    `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`
+  );
+}, 1000);
+
+
+
+    </script>
+</body>
+</html>

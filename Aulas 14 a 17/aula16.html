@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+//Exercício 1: Crie uma Promise que resolva com uma mensagem após 3 segundos. 
+
+const promessa = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Mensagem carregada após 3 segundos");
+  }, 3000);
+});
+
+// Exercício 2: Use .then() para mostrar a mensagem no console.
+
+const promessas = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Mensagem carregada após 3 segundos");
+  }, 3000);
+});
+
+promessa.then((mensagem) => {
+  console.log(mensagem);
+});
+
+// Exercício 3: Reescreva o exercício anterior usando async/await.
+
+function esperar() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Mensagem carregada após 3 segundos");
+    }, 3000);
+  });
+}
+
+async function executar() {
+  const mensagem = await esperar();
+  console.log(mensagem);
+}
+
+executar();
+
+// Exercício 4 (Desafio): Crie uma função carregarDados() com delay e tratamento de erro.
+
+function carregarDados() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const sucesso = true;
+
+      if (sucesso) {
+        resolve("Dados carregados com sucesso!");
+      } else {
+        reject("Erro ao carregar dados!");
+      }
+    }, 2000);
+  });
+}
+
+async function executar() {
+  try {
+    const dados = await carregarDados();
+    console.log(dados);
+  } catch (erro) {
+    console.error(erro);
+  }
+}
+
+executar();
+
+    </script>
+</body>
+</html>

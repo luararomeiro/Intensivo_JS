@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+// Exercício 1: Crie um objeto representando um aluno com nome, idade e curso.
+
+const aluno = {
+  nome: "Ana",
+  idade: 20,
+  curso: "Engenharia"
+};
+
+// Exercício 2: Converta esse objeto para JSON e exiba no console.
+
+const alunos = {
+  nome: "Ana",
+  idade: 20,
+  curso: "Engenharia"
+};
+
+const json = JSON.stringify(aluno);
+
+console.log(json);
+// {"nome":"Ana","idade":20,"curso":"Engenharia"}
+
+
+
+// Exercício 3: Transforme uma string JSON em objeto e acesse uma propriedade.
+
+const textoJSON = '{"nome":"Carlos","idade":22,"curso":"Direito"}';
+
+const objeto = JSON.parse(textoJSON);
+
+console.log(objeto.nome);
+// Carlos
+
+
+// Exercício 4 (Desafio): Simule o envio de um pedido usando fetch e JSON.stringify.
+
+const pedido = {
+  produto: "Teclado",
+  quantidade: 2,
+  valor: 150
+};
+
+fetch("https://api.exemplo.com/pedidos", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(pedido)
+});
+    </script>
+</body>
+</html>
